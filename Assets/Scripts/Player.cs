@@ -194,8 +194,17 @@ public class Player : MonoBehaviour
 
             p1Health.curHealth -= Bomb.damage;
             p2Health.curHealth -= Bomb.damage;
-            dead = true;
-            Destroy(gameObject);
+            if (p1Health.curHealth <= 0)
+            {
+                dead = true;
+                Destroy(gameObject);
+            }
+            if (p2Health.curHealth <= 0)
+            {
+                dead = true;
+                Destroy(gameObject);
+            }
+
 
             globalManager.PlayerDied(playerNumber);
         }
