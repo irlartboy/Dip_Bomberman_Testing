@@ -7,6 +7,7 @@ public class Bomb : MonoBehaviour
     public GameObject explosionPrefab;
     public LayerMask levelMask;
     private bool exploded = false;
+    public static int damage = 1;
     void Start()
     {
         Invoke("Explode", 3f);
